@@ -193,7 +193,18 @@ $(function () {
             success: function(response) {
                 //Làm gì đó khi dữ liệu đã được xử lý
                 if(response.success) {
-                    console.log(response);
+                    console.log(response.data);
+                    if(response.data){
+                        let arr_town = response.data;
+                        let html = '';
+                        $('select[name="town"]').html('');
+                        html += '<option value="">---Quận/huyện---</option>';
+                        arr_town.forEach(function (k_arr, v_arr) {
+                            html += '<option value="'+k_arr+'">'+k_arr+'</option>';
+                        })
+                        $('select[name="town"]').html(html);
+                    }
+                    
                 }
                 else {
                     alert('Đã có lỗi xảy ra');
@@ -205,4 +216,36 @@ $(function () {
             }
         })
     })
+
+    $('.btn-checkout').click(function () {
+        let arr = [];
+        arr['provice'] = $('#form-checkout select[name="provice"]').val();
+        arr['town'] = $('#form-checkout select[name="town"]').val();
+        arr['email'] = $('#form-checkout input[name="email"]').val();
+        arr['customer'] = $('#form-checkout input[name="customer"]').val();
+        arr['address'] = $('#form-checkout input[name="address"]').val();
+        arr['remask'] = $('#form-checkout input[name="remask"]').val();
+        let check = validateInputCheckout(arr);
+        console.log(check);
+        if(check.length == 0){
+            //send ajax;
+        }
+    })
+
+    function validateInputCheckout(data) {
+        let err = [];
+        
+        data.forEach(element => {
+            console.log(element);
+            if(element == ''){
+                err['not_empty'] = "Vui lòng nhập đầy đủ thông tin";
+                return false;
+            }
+        });
+        return err;
+    }
+
+    function checkEmailorPhoneNum(input) {
+        
+    }
 })

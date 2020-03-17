@@ -1615,6 +1615,9 @@ input[type=number] {
 .list-btn-socical ul li{
     margin-right: 5px;
 }
+.box-err{
+    display: none;
+}
 /* end page child tin tuc */
 /* end checkout page */
 @media only screen and (max-width: 414px) {

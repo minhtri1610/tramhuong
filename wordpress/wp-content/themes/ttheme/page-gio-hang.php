@@ -49,11 +49,14 @@
                     </div>
                     <!-- Thông tin khách hàng đặt hàng -->
                     <div class="right-cart col-md-4">
-                        <form action="">
+                        <form action="" id="form-checkout">
+                            <div class="box-err">
+
+                            </div>
                             <label for="Email">Email hoặc Số điện thoại</label>
                             <input type="text" name = "email">
                             <label for="">Họ tên khách hàng</label>
-                            <input type="text" name = "email">
+                            <input type="text" name = "customer">
                             <label for="">Tỉnh</label>
                             <select name="provice" id="">
                                 <option value="">---Tỉnh---</option>
@@ -74,7 +77,7 @@
                             <textarea name="address" id="" cols="30" rows="2"></textarea>
                             <label for="">Ghi Chú</label>
                             <textarea name="remask" id="" cols="30" rows="3"></textarea>
-                            <button>Tiến hành đặt hàng</button>
+                            <button type="button" class="btn-checkout">Tiến hành đặt hàng</button>
                         </form>
                     </div>
                 <?php else:?>
