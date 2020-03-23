@@ -2,8 +2,13 @@
     <div class="container">
         <div class="row ">
             <div class="col-md-8">
-                <div class="parent_title" >
+                <!-- <div class="parent_title" >
                     <a class="" href="<?= URL_ROOT?>"><p class = " wow fadeIn" data-wow-duration=".3" data-wow-delay=".5s"> <img width="25px" src="<?= URL_IMG."/icon-social/icon_banhxephap2.png";?>" alt=""> Tin tức</p></a>
+                </div> -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="contact-title"><i class="fas fa-tv"></i>&nbsp;TIN TỨC</h1>
+                    </div>
                 </div>
                 <div class="list-news ">
 
@@ -25,17 +30,17 @@
                         // $news_date_post = date('d-m-Y', strtotime(get_the_date()));
                 ?>
                     <div class="lsn-item row">
-                        <div class="lsni-img col-md-3">
+                        <div class="lsni-img col-md-3 col-4">
                             <?php if ( has_post_thumbnail() ) {?>
                                 <a class="" href="<?= $news_link_lk;?>"><?php the_post_thumbnail('thumbnail'); ?></a>
                             <?php } else{?>
                                 <a class="" href="<?= $news_link_lk;?>"><img src="<?php echo URL_IMG."/news.jpg"?>"/></a>
                             <?php } ?>
                         </div>
-                        <div class="lsni-content col-md-9">
+                        <div class="lsni-content col-md-9 col-8">
                             <div class="lsni-title"><a href=""><?= $news_title; ?></a></div>
                             <div class="lsni-text">
-                                <?= nl2br($news_description);?>
+                                <?= $news_description;?>
                             </div>
                         </div>
                     </div>
@@ -47,13 +52,15 @@
                     endif;
                 ?>
                     <div class="row text-just-center">
-                        <a href="http://">>>> Xem thêm <<<</a>
+                        <a href="<?= URL_ROOT.'/tin-tuc'?>">>>> Xem thêm <<<</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="parent_title" >
-                    <a class="" href="<?= URL_ROOT?>"><p class = " wow fadeIn" data-wow-duration=".3" data-wow-delay=".5s"> <img width="25px" src="<?= URL_IMG."/icon-social/icon_banhxephap2.png";?>" alt=""> Fanpage Facebook</p></a>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="contact-title" style="max-width:100%"><i class="fab fa-facebook"></i>&nbsp;FANPAGE FACEBOOK</h1>
+                    </div>
                 </div>
             </div>
             

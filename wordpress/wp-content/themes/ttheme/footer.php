@@ -1,10 +1,19 @@
     <div class="content-social">
         <div class="list-social">
             <div class="item-social">
-                <i class="fab fa-facebook-messenger icon-socical"></i>
+                <a href="<?= URL_ROOT.'/gio-hang'?>"><i class="fas fa-shopping-basket icon-socical"></i></a>
+                <?php 
+                $count = 0;
+                if(isset($_SESSION['data_cart'])){
+                    $count = count($_SESSION['data_cart']);
+                }
+                ?>
             </div>
             <div class="item-social">
-                <a class="icon-socical" href="tel:+0928499959"><i class="fas fa-phone-alt"></i></a>
+                <a href="<?= URL_ROOT.'/lien-he'?>"><i class="fas fa-map-marker-alt icon-socical"></i></a>
+            </div>
+            <div class="item-social">
+                <a class="icon-socical" href="tel:+<?= MY_PHONE;?>"><i class="fas fa-phone-alt"></i></a>
             </div>
             <div class="goto-top-page item-social">
                 <i class="fas fa-angle-up icon-socical" title="Lên đầu trang"></i>
@@ -17,9 +26,9 @@
                 <div class="col-md-12 f-info">
                     <h5 class="white-text name-title">
                         <a href="<?= THEME_URL?>">Nhang trầm phước lộc</a></h5>
-                    <p class="mb0">Địa chỉ: Thôn Trinh Long Khánh - Mỹ Cát - Phù Mỹ - Bình Định</p>
-                    <p class="mb0">Email: chuaphuoclocvn@gmail.com</p>
-                    <p class="mb0">Điện thoại: <a href="tel:0928499959" class="text-white">0928499959</a></p>
+                    <p class="mb0">Địa chỉ: <?= ADD;?></p>
+                    <p class="mb0">Email: <?= EMAIL_SEND;?></p>
+                    <p class="mb0">Điện thoại: <a href="tel:'.<?= MY_PHONE;?>.'" class="text-white"><?= MY_PHONE;?></a></p>
                 </div>
             </div> 
         </div>
@@ -35,6 +44,7 @@
     <script type="text/javascript" src="<?= URL_JS.'/slick/slick.min.js'?>"></script>
     <script type="text/javascript" src="<?= URL_JS.'/flick-slide.js'?>"></script>
     <script>
+        const URL_ROOT = '<?php echo URL_ROOT;?>';
         const URL_AJAX = '<?php echo admin_url('admin-ajax.php');?>';
     </script>
     <script type="text/javascript" src="<?= URL_JS.'/index.js'?>"></script>
@@ -79,6 +89,14 @@
             $('.slick-banner').show();
             // $('.slick-books').show();
             // $('.slick-images').show();
+
+            $('.sm-intro').slick({
+                dots: true,
+                infinite: true,
+                speed: 500,
+                fade: true,
+                cssEase: 'linear'
+            });
         });
         $(window).scroll(function() {
             if ($(this).scrollTop() >= 300) {        // If page is scrolled more than 50px

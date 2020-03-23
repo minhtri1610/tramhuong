@@ -2,7 +2,7 @@
 get_header();
 ?>
     <!-- content -->
-    <div class="index-body">
+    <div class="index-body container-fluid">
         <!-- content banner  -->
         <?php get_template_part('template-part/banner'); ?>
         <!-- end content banner -->

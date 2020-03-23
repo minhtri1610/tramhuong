@@ -2,7 +2,12 @@
 
 <main>
     <div class="container">
-        <div class="row">Giới thiệu</div>
+        <?php get_template_part('template-part/sub-nav'); ?>
+        <div class="row section-page">
+            <div class="col-md-12">
+                <h1 class="contact-title"><i class="fas fa-info-circle"></i>&nbsp;Giới thiệu</h1>
+            </div>
+        </div>
         <div class="row contain-aboutme">
             <div class="bg-aboutme"></div>
             <div class="col-md-8">
@@ -22,7 +27,7 @@
             </div>
         </div>
         <div class="row box-go-contact">
-            <a href="http://"><button class='btn-go-contact'>Liên hệ với chúng tôi <span> <i class="fas fa-arrow-circle-right"></i> </span></button></a>
+            <a href="<?= URL_ROOT.'/lien-he';?>"><button class='btn-go-contact'>Liên hệ với chúng tôi <span> <i class="fas fa-arrow-circle-right"></i> </span></button></a>
         </div>
     </div>
     

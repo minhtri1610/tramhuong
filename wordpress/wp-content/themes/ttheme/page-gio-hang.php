@@ -2,19 +2,18 @@
 
 <main>
     <div class="container">
+    <?php get_template_part('template-part/sub-nav'); ?>
     <?php
-        require dirname( __FILE__ ).'/init/product.php';
         // print_r($province);exit();
         $count = 0;
         if(isset($_SESSION['data_cart'])){
             $count = count($_SESSION['data_cart']);
         }
-
     ?>
         <div class="section-page">
             <div class="row">
-                <div class="col-md-12 title-header-page">
-                    <h1>Giỏ hàng (<span class="number-sp"><?= $count;?></span> sản phẩm)</h1>
+                <div class="col-md-12">
+                    <h1 class="contact-title"><i class="fas fa-shopping-bag"></i>&nbsp;Giỏ hàng (<span class="number-sp"><?= $count;?></span> sản phẩm)</h1>
                 </div>
             </div>
             <div class="row containt-cart">
@@ -46,6 +45,9 @@
                         <?php
                             }
                         ?>
+                        <div class="row box-go-contact">
+                            <a href="<?= URL_ROOT.'/san-pham';?>"><button class='btn-go-contact'> Thêm sản phẩm <span> &nbsp; <i class="fas fa-arrow-circle-right"></i> </span></button></a>
+                        </div>
                     </div>
                     <!-- Thông tin khách hàng đặt hàng -->
                     <div class="right-cart col-md-4">
@@ -53,10 +55,10 @@
                             <div class="box-err">
 
                             </div>
-                            <label for="Email">Email hoặc Số điện thoại</label>
-                            <input type="text" name = "email">
-                            <label for="">Họ tên khách hàng</label>
-                            <input type="text" name = "customer">
+                            <label for="Email">Số điện thoại</label>
+                            <input type="text" name = "email" value="<?= isset($_SESSION['data_customer']['email']) ? $_SESSION['data_customer']['email'] : ''?> <?= isset($_SESSION['data_customer']['phone']) ? $_SESSION['data_customer']['phone'] : ''?>">
+                            <label for="">Tên khách hàng</label>
+                            <input type="text" name = "customer" value="<?= isset($_SESSION['data_customer']['customer']) ? $_SESSION['data_customer']['customer'] : ''?>">
                             <label for="">Tỉnh</label>
                             <select name="provice" id="">
                                 <option value="">---Tỉnh---</option>
@@ -74,9 +76,9 @@
                                 <option value="">---Quận/huyện---</option>
                             </select>
                             <label for="">Địa chỉ</label>
-                            <textarea name="address" id="" cols="30" rows="2"></textarea>
+                            <textarea name="address" id="" cols="30" rows="2"><?= isset($_SESSION['data_customer']['address']) ? $_SESSION['data_customer']['address'] : ''?></textarea>
                             <label for="">Ghi Chú</label>
-                            <textarea name="remask" id="" cols="30" rows="3"></textarea>
+                            <textarea name="remask" id="" cols="30" rows="3"><?= isset($_SESSION['data_customer']['remask']) ? $_SESSION['data_customer']['remask'] : ''?></textarea>
                             <button type="button" class="btn-checkout">Tiến hành đặt hàng</button>
                         </form>
                     </div>

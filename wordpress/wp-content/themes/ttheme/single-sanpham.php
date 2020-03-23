@@ -2,9 +2,7 @@
 
 <main role="main">
     <div class="container">
-        <div class="row child-menu">
-            //get child menu
-        </div>
+        <?php get_template_part('template-part/sub-nav'); ?>
         <div class=" section-page">
             <?php
                 while ( have_posts() ) : the_post(); 
@@ -65,7 +63,7 @@
                             </tr>
                             <tr>
                                 <th>Đánh giá:</th>
-                                <td></td>
+                                <td><iframe src="https://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fnhangtramphuocloc.com&width=320&layout=standard&action=like&size=small&share=true&height=35&appId=828266150704740" width="320" height="35" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe></td>
                             </tr>
                             <tr>
                                 <td colspan="2" class=" no-border">
@@ -90,8 +88,10 @@
                 endwhile;
             ?>
         </div>
-        <div class="row title-header-page">
-            <h1>Sản phẩm tương tự</h1>
+        <div class="row section-page">
+            <div class="col-md-12">
+                <h1 class="contact-title"><i class="far fa-newspaper"></i>&nbsp;Sản phẩm tương tự</h1>
+            </div>
         </div>
         <div class="row sp-list">
             <?php

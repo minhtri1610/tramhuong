@@ -27,3 +27,12 @@
         }
         return $res;
     }
+
+    function getInfoCustomer()
+    {
+        $res = [];
+        if(isset($_SESSION['data_customer']) && !empty($_SESSION['data_customer'])){
+            $res = $_SESSION['data_customer'];
+        }
+        return $res;
+    }

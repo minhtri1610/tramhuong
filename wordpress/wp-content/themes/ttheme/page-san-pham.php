@@ -3,11 +3,12 @@
 <main>
     <div class="container">
         <!-- hiển thị menu con-->
+        <?php get_template_part('template-part/sub-nav'); ?>
         <div class="row section-page">
             <div class="col-md-12 sp-content">
                 <div class="row">
-                    <div class="col-md-12 title-header-page">
-                        <h1>Sản Phẩm</h1>
+                    <div class="col-md-12">
+                        <h1 class="contact-title"><i class="fab fa-dropbox"></i>&nbsp;Sản Phẩm</h1>
                     </div>
                 </div>
                 <div class="row sp-list">
@@ -70,18 +71,6 @@
                     <?php if (function_exists('devvn_wp_corenavi')) devvn_wp_corenavi($products_loop_mcc);?>
                 </div>
             </div>
-            <!-- <div class="col-md-3 nav-link-sp">
-                <div class="sp-header">
-                    Danh Mục Sản Phẩm
-                </div>
-                <div class="sp-list-header">
-                    <ul>
-                        <li>1</li>
-                        <li>3</li>
-                        <li>4</li>
-                    </ul>
-                    </div>
-            </div> -->
         </div>
 
         <div class="row section-payment">
@@ -105,7 +94,6 @@
             </div>
         </div>
     </div>
-
 </main>
 
 <?php get_footer();?>

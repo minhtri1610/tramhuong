@@ -7,16 +7,21 @@
         switch ($str_page) {
             case 'tin-tuc':
                 $str_v_name = __('Tin tức');break;
-            case 'phap-am':
-                $str_v_name = __('Pháp âm');break;
-            case 'hinh-anh':
-                $str_v_name = __('Thư viện hình ảnh');break;
-            case 'kinh-sach':
-                $str_v_name = __('Thư viện kinh sách');break;
+            case 'gioi-thieu':
+                $str_v_name = __('Giới thiệu');break;
+            case 'lien-he':
+                $str_v_name = __('Liên Hệ');break;
+            case 'san-pham':
+            case 'sanpham':
+                $str_v_name = __('Sản Phẩm');break;
             case 'goc-chia-se':
                 $str_v_name = __('Góc chia sẻ');break;
-            case 'lien-he':
-                $str_v_name = __('Liên hệ');break;
+            case 'gio-hang':
+                $str_v_name = __('Giỏ hàng');break;
+            case 'confirm-cart':
+                $str_v_name = __('Xác Nhận Đặt Hàng');break;
+            case 'order-success':
+                $str_v_name = __('Thông báo');break;
             default:
             break;
         }

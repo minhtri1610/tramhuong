@@ -2,60 +2,80 @@
 
 <main>
     <div class="container">
-        <div class="row">
-            <div class="h2-title">
-                <h2>TIN TỨC</h2>
+        <?php get_template_part('template-part/sub-nav'); ?>
+        <div class="row section-page">
+            <div class="col-md-12">
+                <h1 class="contact-title"><i class="far fa-newspaper"></i>&nbsp;TIN TỨC</h1>
             </div>
         </div>
         <section class="news-detail">
             <div class="row">
                 <div class="col-md-12 bg-news-child">
+                    <?php 
+                        while ( have_posts() ) : the_post(); 
+                        $id = get_the_ID();
+                        $tmp_title =  get_the_title();
+                        $link = get_the_permalink();
+                        $news_date_post_sign = date('d-m-Y', strtotime(get_the_date()));
+                        $content_text = get_the_content();
+                    ?>
                     <div class="parent-title">
                         <h3>
-                            Title here!
+                            <?= $tmp_title;?>
                         </h3>
                     </div>
                     <div class="post-date">
-                        Ngày đăng: 03/09/2020
+                        Ngày đăng: <?= $news_date_post_sign;?>
                     </div>
                     <div class="list-btn-socical">
-                        <ul>
-                            <li><button>FB</button></li>
-                            <li><button>FB</button></li>
-                            <li><button>FB</button></li>
-                        </ul>
+                        <iframe src="https://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fnhangtramphuocloc.com&width=450&layout=standard&action=like&size=small&share=true&height=35&appId=828266150704740" width="320" height="35" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
                     </div>
                     <div class="news-body">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non ipsa eos dolorem ad natus? Quia nam deleniti aliquid impedit, laboriosam pariatur assumenda mollitia minima nulla, reprehenderit quasi eum ipsa ab?
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste vitae distinctio, temporibus nam dolore fugit aspernatur veniam voluptates incidunt reiciendis laudantium voluptate numquam. Quam natus cupiditate sint odio reiciendis nihil.
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim quam eaque expedita voluptatem odio voluptates veniam at deserunt fugiat. Aspernatur odio voluptatem quos earum non laudantium ipsa nisi doloribus magnam?
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, perspiciatis fugiat perferendis architecto, eum delectus nesciunt a quia labore voluptatem laudantium. Fugit sit illo qui tenetur aperiam perspiciatis, ea officiis?
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit neque accusantium, minima necessitatibus, quisquam porro odit dolor quas debitis reprehenderit iste doloremque architecto illum qui? Quos odit voluptatum velit tempora.
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, iste. Facilis corporis ducimus ut molestias dolorem, libero quo tempore eius blanditiis at necessitatibus officia, ea, nesciunt hic consectetur est placeat.
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat atque aut sequi cum saepe laborum accusantium ab magni labore libero possimus, asperiores laboriosam, adipisci consequuntur sed provident iusto nemo enim.
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate corporis impedit velit? Vero vel sit debitis possimus nemo delectus magnam cum consequatur modi explicabo incidunt praesentium et inventore, aliquam ipsam.
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum explicabo vitae quibusdam consequuntur expedita eaque ipsum laborum iure assumenda odio architecto necessitatibus soluta consectetur at alias molestias, sit accusamus quisquam.
+                        <?php echo  nl2br($content_text);?>
                     </div>
+                    <?php
+                        endwhile;
+                    ?>
                 </div>
                 
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    Tin liên quan
-                </div>
-                <div class="col-md-12">
-                    <div class="row">
-                        <ul>
-                            <li><span>>></span> <a href="">Lorem ipsum dolor sit amet consectetur adipisicing elit.</a></li>
-                            <li><span>>></span> <a href="">Lorem ipsum dolor sit amet consectetur adipisicing elit.</a></li>
-                            <li><span>>></span> <a href="">Lorem ipsum dolor sit amet consectetur adipisicing elit.</a></li>
-                            <li><span>>></span> <a href="">Lorem ipsum dolor sit amet consectetur adipisicing elit.</a></li>
-                            <li><span>>></span> <a href="">Lorem ipsum dolor sit amet consectetur adipisicing elit.</a></li>
-                        </ul>
-                    </div>
+            
+        </section>
+        <div class="section-page row">
+            <div class="col-md-12">
+                <h1 class="contact-title"><i class="far fa-copy"></i>&nbsp; Tin liên quan</h1>
+            </div>
+            <div class="col-md-12">
+                <div class="row">
+                    <ul class="news-lq">
+                        <?php 
+                            $args_banner = array(
+                                'post_type' => 'tintuc',
+                                'post_status' => 'publish',
+                                'posts_per_page' => '5',
+                                'category_name' => 'tin-tuc'
+                            );
+                            $list_news = new WP_Query( $args_banner );
+                        ?>
+                        <?php
+                            if ( $list_news->have_posts() ) :
+                                while ( $list_news->have_posts() ) : $list_news->the_post();
+                                $news_title = get_the_title();
+                                $news_link_lk = get_the_permalink();
+                                $news_date_post = date('d-m-Y', strtotime(get_the_date()));
+                        ?>
+                            <li><a href="<?= $news_link_lk;?>">[<?= $news_date_post;?>] <?= $news_title;?></a></li>
+                        <?php
+                            endwhile;
+                        ?>
+                        <?php
+                                wp_reset_postdata();
+                            endif;
+                        ?>
+                    </ul>
                 </div>
             </div>
-        </section>
+        </div>
     </div>
 </main>
 

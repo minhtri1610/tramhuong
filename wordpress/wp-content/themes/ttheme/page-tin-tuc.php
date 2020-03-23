@@ -2,14 +2,10 @@
 
 <main>  
     <div class="container">
-        <!-- <div class="row">
-            <div class="h2-title">
-                <h2>TIN TỨC</h2>
-            </div>
-        </div> -->
-        <div class="row">
-            <div class="col-md-12 title-header-page">
-                <h1>TIN TỨC</h1>
+        <?php get_template_part('template-part/sub-nav'); ?>
+        <div class="row section-page">
+            <div class="col-md-12">
+                <h1 class="contact-title"><i class="fas fa-tv"></i>&nbsp;TIN TỨC</h1>
             </div>
         </div>
         <section class="list-news row">
@@ -36,11 +32,13 @@
                 <div class="row item-news">
                     <div class="col-md-3 news-img">
                         <figure>
-                            <?php if ( has_post_thumbnail() ) {?>
-                                <?php nl2br(the_post_thumbnail()); ?>
-                            <?php } else{?>
-                                <img src="<?php echo URL_IMG."/news.jpg"?>"/>
-                            <?php } ?>
+                            <a href="<?= $link_lk;?>">
+                                <?php if ( has_post_thumbnail() ) {?>
+                                    <?php nl2br(the_post_thumbnail()); ?>
+                                <?php } else{?>
+                                    <img src="<?php echo URL_IMG."/news.jpg"?>"/>
+                                <?php } ?>
+                            </a>
                         </figure>
                     </div>
                     <div class="col-md-9 news-cotent">
@@ -51,11 +49,12 @@
                             <p>Ngày đăng: <?= $date_post;?></p>
                         </div>
                         <div class="list-action-socical">
-                            <ul>
+                            <iframe src="https://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fnhangtramphuocloc.com&width=320&layout=standard&action=like&size=small&share=true&height=35&appId=828266150704740" width="320" height="35" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                            <!-- <ul>
                                 <li><button class="button">button01</button></li>
                                 <li><button class="button">button01</button></li>
                                 <li><button class="button">button01</button></li>
-                            </ul>
+                            </ul> -->
                         </div>
                         <div class="news-sub-content">
                             <p>

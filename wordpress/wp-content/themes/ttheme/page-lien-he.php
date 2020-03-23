@@ -2,25 +2,39 @@
 
 <main>
     <div class="container">
-        <div class="row">Liên hệ</div>
-        <div class="row">
+        <?php get_template_part('template-part/sub-nav'); ?>
+        <!-- <div class="row section-page">
             <div class="col-md-12">
-                <h1>Nhang Trầm Phước Lộc</h1>
+                <h1 class="contact-title"><i class="fas fa-comments"></i>&nbsp;Liên Hệ</h1>
+            </div>
+        </div> -->
+        <div class="row section-page">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="thank-text">
+                            Cám ơn quý khách đã ghé thăm website <a href="<?= URL_ROOT;?>"><?= NAME_DOIMAIN;?></a>. Quý vị có thể liên hệ theo thông tin bên dưới.
+                        </p>
+                    </div>
+                </div>
+                <!-- <div class="row lh-title">
+                    <h1>Nhang Trầm Phước Lộc</h1>
+                </div> -->
                 <div class="row contact-info">
                     <div class="col-md-6 l-contact-info">
                         <h3 class="contact-title"><i class="fas fa-address-card"></i> Thông tin liên hệ</h3>
                         <table>
                             <tr>
                                 <td class="td-icon"><i class="fas fa-search-location"></i></td>
-                                <td>Địa chỉ: abc</td>
+                                <td>Địa chỉ: <a href="#contain-map"><?= ADD;?></a></td>
                             </tr>
                             <tr>
                                 <td class="td-icon"><i class="fas fa-mobile-alt"></i></td>
-                                <td>Số điện thoại: <a type="tel:123123131"></a>123123131</td>
+                                <td>Số điện thoại: <a href="tel:<?= MY_PHONE;?>"><?= MY_PHONE;?></a></td>
                             </tr>
                             <tr>
                                 <td class="td-icon"><i class="fab fa-facebook-square"></i></td>
-                                <td>Fanpage Facebook: abc</td>
+                                <td>Fanpage Facebook: </td>
                             </tr>
                         </table>
                     </div>
@@ -35,12 +49,12 @@
                             <textarea name="" id="" cols="30" rows="10">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt necessitatibus accusantium possimus, voluptates aliquam, eaque eveniet minima, assumenda nemo libero veniam. Repudiandae officia accusamus laudantium culpa praesentium iusto sequi qui!
                             </textarea>
-                            <button class="btn-sendmail"><i class="fas fa-paper-plane"></i>Gửi</button>
+                            <button class="btn-sendmail"><i class="fas fa-paper-plane"></i>&nbsp;Gửi</button>
                         </form>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12 contain-map">
+                    <div class="col-md-12 contain-map" id="contain-map">
                         <h3 class="contact-title"><i class="fas fa-search-location"></i> Tìm chúng tôi trên bản đồ</h3>
                         <div class="mapouter">
                             <div class="gmap_canvas">
@@ -53,7 +67,7 @@
             </div>
         </div>
         <div class="row box-go-contact">
-            <a href="http://"><button class='btn-go-contact'> Xem sản phẩm <span> <i class="fas fa-arrow-circle-right"></i> </span></button></a>
+            <a href="<?= URL_ROOT.'/san-pham';?>"><button class='btn-go-contact'> Xem sản phẩm <span> &nbsp; <i class="fas fa-arrow-circle-right"></i> </span></button></a>
         </div>
     </div>
 </main>

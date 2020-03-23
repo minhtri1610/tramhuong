@@ -53,7 +53,6 @@ $(function () {
     var stick_footer = footer.height();
     var height_body = $(window).height();
     var stick_fixed = height_body - stick_footer;
-    console.log(stick_fixed);
 
     window.onscroll = function(ev) {
         if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 241)) {
@@ -66,10 +65,12 @@ $(function () {
     };
 
     function fixedHeader() {
-        if (window.pageYOffset > sticky) {
-            header.classList.add("sticky");
-        } else {
-            header.classList.remove("sticky");
+        if($(window).width() > 472){
+            if (window.pageYOffset > sticky) {
+                header.classList.add("sticky");
+            } else {
+                header.classList.remove("sticky");
+            }
         }
     }
     // section-tmp-payment
@@ -223,27 +224,125 @@ $(function () {
         arr['town'] = $('#form-checkout select[name="town"]').val();
         arr['email'] = $('#form-checkout input[name="email"]').val();
         arr['customer'] = $('#form-checkout input[name="customer"]').val();
-        arr['address'] = $('#form-checkout input[name="address"]').val();
-        arr['remask'] = $('#form-checkout input[name="remask"]').val();
+        arr['address'] = $('#form-checkout textarea[name="address"]').val();
+        arr['remask'] = $('#form-checkout textarea[name="remask"]').val();
         let check = validateInputCheckout(arr);
-        console.log(check);
         if(check.length == 0){
+            $('.box-err').hide();
+            saveDataOrder(arr);
             //send ajax;
+        }else{
+            $('.box-err').show();
+            renderError(check);
         }
     })
 
+    function renderError(data) {
+        let html = '';
+        if(data){
+            html += "<ul>";
+            data.forEach(function (params) {
+                console.log(params);
+                    html += "<li>";
+                        html += params;
+                    html += "</li>";
+            })
+            html += "</ul>";
+        }
+        $('html,body').animate({
+            scrollTop: $("#form-checkout").offset().top
+        }, 'slow');
+        $('.box-err').html(html);
+    }
+
     function validateInputCheckout(data) {
         let err = [];
-        
-        data.forEach(element => {
-            console.log(element);
-            if(element == ''){
-                err['not_empty'] = "Vui lòng nhập đầy đủ thông tin";
-                return false;
-            }
-        });
+        if(data['email'] == ''){
+            err.push('Vui lòng nhập email or số điện thoại!');
+        }
+
+        if(data['address'] == ''){
+            err.push('Vui lòng nhập địa chỉ giao hàng!')
+        }
+
+        if(data['customer'] == ''){
+            err.push('Vui lòng nhập tên khách hàng!')
+        }
+
+        if(data['provice'] == ''){
+            err.push('Vui lòng chọn Tỉnh!')
+        }
+
+        if(data['town'] == ''){
+            err.push('Vui lòng chọn quận huyện!')
+        }
+
         return err;
     }
+
+    function saveDataOrder(data) {
+        $.ajax({
+            type : "post", //Phương thức truyền post hoặc get
+            dataType : "json", //Dạng dữ liệu trả về xml, json, script, or html
+            url : URL_AJAX, //Đường dẫn chứa hàm xử lý dữ liệu. Mặc định của WP như vậy
+            data : {
+                action : "saveOrder", //Tên action
+                email : data['email'],
+                customer : data['customer'],
+                provice : data['provice'],
+                town : data['town'],
+                address : data['address'],
+                remask : data['remask']
+            },
+            context: this,
+            beforeSend: function(){
+                //Làm gì đó trước khi gửi dữ liệu vào xử lý
+            },
+            success: function(response) {
+                //Làm gì đó khi dữ liệu đã được xử lý
+                if(response.success) {
+                    window.location.href = URL_ROOT+'/confirm-cart';
+                }
+                else {
+                    alert('Đã có lỗi xảy ra');
+                }
+            },
+            error: function( jqXHR, textStatus, errorThrown ){
+                //Làm gì đó khi có lỗi xảy ra
+                console.log( 'The following error occured: ' + textStatus, errorThrown );
+            }
+        })
+    }
+
+    $('#btn-order').click(function (params) {
+        $(this).attr('disabled', 'disabled');
+        $.ajax({
+            type : "post", //Phương thức truyền post hoặc get
+            dataType : "json", //Dạng dữ liệu trả về xml, json, script, or html
+            url : URL_AJAX, //Đường dẫn chứa hàm xử lý dữ liệu. Mặc định của WP như vậy
+            data : {
+                action : "sendOrder", //Tên action
+            },
+            context: this,
+            beforeSend: function(){
+                //Làm gì đó trước khi gửi dữ liệu vào xử lý
+            },
+            success: function(response) {
+                //Làm gì đó khi dữ liệu đã được xử lý
+                $('#btn-order').removeAttr('disabled');
+                if(response.success) {
+                    window.location.href = URL_ROOT+'/order-success';
+                }
+                else {
+                    alert('Đã có lỗi xảy ra');
+                }
+            },
+            error: function( jqXHR, textStatus, errorThrown ){
+                //Làm gì đó khi có lỗi xảy ra
+                console.log( 'The following error occured: ' + textStatus, errorThrown );
+            }
+        })
+    })
 
     function checkEmailorPhoneNum(input) {
         

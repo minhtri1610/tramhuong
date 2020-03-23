@@ -10,6 +10,14 @@
 	define('URL_IMG', THEME_URL.'/image' );
 	define('URL_ROOT', get_home_url());
 	define('MY_PHONE', '0928499959');
+	define('NAME_WEB', 'NHANG TRẦM PHƯỚC LỘC');
+	define('ADD', 'Thôn Trinh Long Khánh - Mỹ Cát - Phù Mỹ - Bình Định');
+	define('EMAIL_SEND', 'chuaphuoclocvn@gmail.com');
+	define('PASS_PUBLIC', 'adidaphatvn1976');
+	define('NAME_DOIMAIN', 'nhangtramphuocloc.com');
+	define('ZALO', 'link zalo');
+	define('FB_LINK', 'fb.com/nhangtramphuocloc');
+
 	if ( ! function_exists( 'ttheme_setup' ) ) :
 		function ttheme_setup() {
 			load_theme_textdomain( 'ttheme', get_template_directory() . '/languages' );
@@ -49,6 +57,8 @@
 	endif;
 	add_action( 'after_setup_theme', 'ttheme_setup' );
 		// import init function
+		
+    require dirname( __FILE__ ).'/init/product.php';
 	require dirname( __FILE__ ).'/init/init.php';
 	
 	function devvn_wp_corenavi($custom_query = null, $paged = null) {
@@ -221,6 +231,140 @@
 			$dataTown = $dataProvince[$_POST['name_provice']];
 			wp_send_json_success($dataTown);
 			die();
+		}
+	}
+
+	add_action( 'wp_ajax_saveOrder', 'saveOrder' );
+	add_action( 'wp_ajax_nopriv_saveOrder', 'saveOrder' );
+	function saveOrder()
+	{
+		$data = [];
+		if(isset($_POST)&& !empty($_POST)){
+			$item = [];
+			$email = isset($_POST['email']) ? $_POST['email'] : '';
+
+			if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+				$item['email'] = trim($email);
+				$item['phone'] = '';
+			} else {
+				$item['email'] = '';
+				$item['phone'] = trim($email);
+			}
+			$item['customer'] = isset($_POST['customer']) ? $_POST['customer'] : '';
+			$item['provice'] = isset($_POST['provice']) ? $_POST['provice'] : '';
+			$item['town'] = isset($_POST['town']) ? $_POST['town'] : '';			
+			$item['address'] = isset($_POST['address']) ? $_POST['address'] : '';
+			$item['remask'] = isset($_POST['remask']) ? $_POST['remask'] : '';	
+			$_SESSION['data_customer'] = $item;
+		}
+		wp_send_json_success($data);
+		die();
+	}
+
+	add_action( 'wp_ajax_sendOrder', 'sendOrder' );
+	add_action( 'wp_ajax_nopriv_sendOrder', 'sendOrder' );
+	function sendOrder()
+	{
+		if(isset($_SESSION['data_customer']) && !empty($_SESSION['data_customer'])){
+			$data_user = $_SESSION['data_customer'];
+			if(isset($data_user['email']) && !empty($data_user['email'])){
+				//send email
+				prefix_send_email_to_admin('user');
+			}
+			//send
+			prefix_send_email_to_admin('admin');
+			//send email addmin
+
+		}
+	}
+
+	// đặt hàng
+	$url_link = $_SERVER['DOCUMENT_ROOT'] . '/wp-content/themes/ttheme/';
+	require ( $url_link . 'PHPMailer/src/PHPMailer.php' );
+	require ( $url_link . 'PHPMailer/src/Exception.php' );
+	require ( $url_link . 'PHPMailer/src/SMTP.php' );
+	function prefix_send_email_to_admin($type) {
+		if(isset($_SESSION["data_cart"])){
+			$tmp_cart = getProduct();
+			$html = '';
+			$html .= '<tr>';
+				$html .= '<td style = "width: 250px">';
+					$html .= '<b>Tên sản phẩm</b>';
+				$html .= '</td>';
+				$html .= '<td style = "width: 150px">';
+					$html .= '<b>Số lượng</b>';
+				$html .= '</td>';
+			$html .= '</tr>';
+			foreach ($tmp_cart as $key => $value) {
+				
+				$html .= '<tr>';
+					$html .= '<td>';
+						$html .= '<a href="'. $value['link'].'">';
+							$html .= $value['name'];
+						$html .= '</a>';
+					$html .= '</td>';
+					$html .= '<td>';
+						$html .= $value['sl'];
+					$html .= '</td>';
+				$html .= '</tr>';
+						
+			}
+			if($type=='admin'){
+				$html .= '<p><b>Tên khách hàng: </b>'.$_SESSION['data_customer']['customer'].'</p>';
+			}
+			$html .= '<p><b>SĐT đặt hàng: </b>'.$_SESSION['data_customer']['phone'].'</p>';
+			$html .= '<p><b>Địa chỉ nhận hàng: </b>'.$_SESSION['data_customer']['address'].$_SESSION['data_customer']['town'].$_SESSION['data_customer']['provice'].'</p>';
+			$html .= '<p><b>----------------------</b></p>';
+			$html .= '<p><b>'.NAME_WEB.'</b></p>';
+			$html .= '<p><b>Địa chỉ</b>: '.ADD.'</p>';
+			$html .= '<p><b>Số điện thoại</b>: '.MY_PHONE.'</p>';
+			
+			
+			$mail = new PHPMailer\PHPMailer\PHPMailer();                              // Passing `true` enables exceptions
+			//Server settings
+			// $mail->SMTPDebug = 2;                                 // Enable verbose debug output
+			$mail->isSMTP();                                      // Set mailer to use SMTP
+			$mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+			$mail->SMTPAuth = true;                               // Enable SMTP authentication
+			$mail->Username = EMAIL_SEND;                 // SMTP username
+			$mail->Password = PASS_PUBLIC;                           // SMTP password
+			$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+			$mail->Port = 587;                                    // TCP port to connect to
+
+			//Recipients
+			$mail->setFrom(EMAIL_SEND, NAME_WEB);
+			$mail->addAddress(EMAIL_SEND, "EMAIL TỰ ĐỘNG TỪ HỆ THỐNG WEBSITE");     // Add a recipient
+			$mail->AddCC(EMAIL_SEND);
+			//Content
+			$mail->isHTML(true);                               // Set email format to HTML
+			$mail->Subject = 'Xác nhận đơn hàng từ '.NAME_WEB;
+			$mail->CharSet = "UTF-8";
+			if($type == 'user'){
+				$body_mail = '<b>Cám ơn Anh/chị! Đơn hàng đã được gửi. Chúng tôi sẽ liên lạc sớm nhất để xác nhận đơn hàng.</b> <br />'.
+				'Nội dung đơn hàng<br />'
+				.'----------------------<br>'
+				.$html;
+			}else{
+				$body_mail = '<b>Thông tin đơn hàng, Vui lòng liên hệ với khách hàng để xác nhận đơn hàng.</b> <br />'
+				.'----------------------<br>'
+				.$html;
+			}
+			
+			$mail->Body    = $body_mail;
+			$mail->IsHTML(true); 
+			$mail->SMTPOptions = array(
+				'ssl' => array(
+					'verify_peer' => false,
+					'verify_peer_name' => false,
+					'allow_self_signed' => true
+				)
+			);
+			// print_r($body_mail);
+			// print_r($mail->send());die();
+			if ( $mail->send() ) {
+				session_destroy();
+				// wp_redirect(URL_ROOT."/success");
+			}
 		}
 	}
 
