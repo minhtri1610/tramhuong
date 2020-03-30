@@ -10,6 +10,7 @@
     <link type="text/css" rel="stylesheet" href="<?= URL_JS.'/slick/slick.css';?>"/>
     <link href="<?= URL_CSS.'/all.min.css';?>" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="<?= THEME_URL.'/css/flick-slide.css';?>"/>
+    <link type="text/css" rel="stylesheet" href="<?= THEME_URL.'/css/wow.css';?>"/>
     <link type="text/css" rel="stylesheet" href="<?= THEME_URL.'/style.css';?>"/>
     <meta name="description" content="<?php bloginfo('description'); ?>">
     <title><?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' :'; } ?> <?php bloginfo('name'); ?></title>

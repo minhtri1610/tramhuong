@@ -47,6 +47,7 @@
         const URL_ROOT = '<?php echo URL_ROOT;?>';
         const URL_AJAX = '<?php echo admin_url('admin-ajax.php');?>';
     </script>
+    <script type="text/javascript" src="<?= URL_JS.'/wow.js'?>"></script>
     <script type="text/javascript" src="<?= URL_JS.'/index.js'?>"></script>
     <script>
         jQuery(document).ready(function($) {

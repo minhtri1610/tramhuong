@@ -18,7 +18,7 @@
       <a href="<?= URL_ROOT;?>">
         <h1>Nhang Trầm Phước Lộc</h1>
       </a>
-      <p> <a href="tel:<?= MY_PHONE;?>" class=""><i class="fas fa-mobile-alt"></i> <?= MY_PHONE;?> </a>&nbsp;&nbsp;<a href="" class=""><i class="fab fa-facebook"></i> <?= FB_LINK;?> </a></p>
+      <p> <a href="tel:<?= MY_PHONE;?>" class=""><i class="fas fa-mobile-alt"></i> <?= MY_PHONE;?> </a><span>&nbsp;&nbsp;</span><a href="" class=""><i class="fab fa-facebook"></i> <?= FB_LINK;?> </a></p>
     </div>
     <div class="col-md-3">
       <div class="cart">

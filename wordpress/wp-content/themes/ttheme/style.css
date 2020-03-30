@@ -208,7 +208,9 @@ nav{
 }
 .grey-div{
     padding: 1.5rem 0;
-    background-image: url('image/bg-news.png');
+    color: #fff;
+    background: #09111a;
+    /* background-image: url('image/bg-news.png'); */
 }
 .white-div{
     padding: 1.5rem 0;
@@ -871,7 +873,7 @@ main{
     color: yellow;
 }
 .sub-title{
-    margin: 15px 0;
+    margin: 50px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -890,6 +892,12 @@ main{
     color: #09111a;
     flex: 2;
     text-align: center;
+}
+.grey-div .sub-title span{
+    color: #fff;
+}
+.grey-div .sub-title b {
+    background-color: #fff;
 }
 .long-title b{
     flex: 1;
@@ -919,7 +927,7 @@ main{
     margin: 30px 0;
 }
 .intro-view-more a{
-    color: #890500;
+    /* color: #890500; */
 }
 .carousel-cell {
     width: 28%;
@@ -974,6 +982,7 @@ main{
 }
 .ht-item{
     text-align: center;
+    padding-bottom: 3rem;
 }
 .hti-img {
     text-align: center;
@@ -990,6 +999,7 @@ main{
 }
 .hti-subtext{
     text-align: center;
+    font-style: italic;
 }
 .lsni-img{
     justify-content: center;
@@ -1011,7 +1021,6 @@ main{
 }
 .lsn-item {
     padding: 15px 0;
-    margin-bottom: 15px;
     border-bottom: 1px solid #dcdcdc;
     margin-left: 0px;
     margin-right: 0px;
@@ -1030,6 +1039,7 @@ main{
     font-size: 18px;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 .title-parent p a{
     color: #09111ad6;
@@ -1580,6 +1590,7 @@ input[type=number] {
     text-transform: capitalize;
     max-width: 50%;
     color: #09111a;
+    font-weight: bold;
 }
 .contain-map .contact-title{
     max-width: 50%;
@@ -1605,11 +1616,13 @@ input[type=number] {
     border: 1px solid #c8c8c8;
     width: 100%;
     margin-bottom: 5px;
+    padding-left: 15px;
 }
 .r-contact-info form textarea{
     width: 100%;
     border-radius: 6px;
     border: 1px solid #c8c8c8;
+    padding-left: 15px;
 }
 .btn-sendmail{
     padding: 5px 35px;
@@ -1769,7 +1782,13 @@ input[type=number] {
     -webkit-animation: shine .75s;
     animation: shine .75s;
 }
+.index-body{
+    padding: 0;
+}
 @media only screen and (max-width: 414px) {
+    .sub-title {
+        margin: 15px 0;
+    }
     .sm-intro{
         display: block;
     }
@@ -1794,7 +1813,7 @@ input[type=number] {
         flex-flow: wrap;
     }
     .logo img {
-        width: 100px;
+        width: 80px;
         margin: 5px 0;
     }
     .title-parent h1 {

@@ -33,10 +33,10 @@
                 </div> -->
         <div class="slick-banner">
             <div class ="banner-item">
-                <img src="<?= URL_IMG.'/banner/bn-01.jpg'?>" alt="">
+                <img src="<?= URL_IMG.'/banner/bn-01.jpg'?>" alt="nhang trầm phước lộc">
             </div>
             <div class ="banner-item">
-                <img src="<?= URL_IMG.'/banner/bn-02.jpg'?>" alt="">
+                <img src="<?= URL_IMG.'/banner/bn-02.png'?>" alt="bán hàng gây quỹ từ thiện">
             </div>
         </div>
     </div>

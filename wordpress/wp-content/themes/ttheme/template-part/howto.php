@@ -19,7 +19,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 ht-item">
                 <div class="hti-img">
                     <img class="w100-img" src="<?= URL_IMG.'/howto/howto02.png'?>" alt="">
                 </div>
@@ -32,7 +32,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 ht-item">
                 <div class="hti-img">
                     <img class="w100-img" src="<?= URL_IMG.'/howto/howto03.png'?>" alt="">
                 </div>

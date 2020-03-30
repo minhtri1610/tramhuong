@@ -39,7 +39,7 @@
                         </table>
                     </div>
                     <div class="col-md-6 r-contact-info">
-                        <h3 class="contact-title"><i class="fas fa-paper-plane"></i> Gửi email cho chúng tôi</h3>
+                        <h3 class="contact-title" style="max-width: 100%"><i class="fas fa-paper-plane"></i> Gửi email cho chúng tôi</h3>
                         <form action="">
                             <label for="email">Email</label>
                             <input type="email" placeholder="Email của bạn..." name="email">
