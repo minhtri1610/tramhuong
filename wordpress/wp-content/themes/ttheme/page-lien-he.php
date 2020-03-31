@@ -44,11 +44,9 @@
                             <label for="email">Email</label>
                             <input type="email" placeholder="Email của bạn..." name="email">
                             <label for="name">Tên khách hàng:</label>
-                            <input type="text" name="name">
+                            <input type="text" name="name" placeholder="Tên của bạn...">
                             <label for="content">Nội dung phản hồi:</label>
-                            <textarea name="" id="" cols="30" rows="10">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt necessitatibus accusantium possimus, voluptates aliquam, eaque eveniet minima, assumenda nemo libero veniam. Repudiandae officia accusamus laudantium culpa praesentium iusto sequi qui!
-                            </textarea>
+                            <textarea name="" id="" cols="30" rows="10" placeholder="Vui lòng nhập nội dung..."></textarea>
                             <button class="btn-sendmail"><i class="fas fa-paper-plane"></i>&nbsp;Gửi</button>
                         </form>
                     </div>

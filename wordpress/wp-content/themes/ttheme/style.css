@@ -2110,7 +2110,7 @@ input[type=number] {
     }
     .r-contact-info form input {
         font-size: 14px;
-        padding: 6px;
+        padding: 10px;
         border-radius: 0;
     }
     .r-contact-info form label {
@@ -2118,6 +2118,7 @@ input[type=number] {
     }
     .r-contact-info form textarea {
         border-radius: unset;
+        padding: 10px;
     }
 }
 @media only screen and (max-width: 375px){

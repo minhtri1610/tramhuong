@@ -48,7 +48,7 @@
         const URL_AJAX = '<?php echo admin_url('admin-ajax.php');?>';
     </script>
     <script type="text/javascript" src="<?= URL_JS.'/wow.js'?>"></script>
-    <script type="text/javascript" src="<?= URL_JS.'/index.js'?>"></script>
+    <script type="text/javascript" src="<?= URL_JS.'/index.js?v='.VERSION_JS;?>"></script>
     <script>
         jQuery(document).ready(function($) {
             //index flick slide
