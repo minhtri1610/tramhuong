@@ -30,7 +30,7 @@
                         $date_post = get_the_date();
                 ?>
                 <div class="row item-news">
-                    <div class="col-md-3 news-img">
+                    <div class="col-md-3 col-3 news-img">
                         <figure>
                             <a href="<?= $link_lk;?>">
                                 <?php if ( has_post_thumbnail() ) {?>
@@ -41,7 +41,7 @@
                             </a>
                         </figure>
                     </div>
-                    <div class="col-md-9 news-cotent">
+                    <div class="col-md-9 col-9 news-cotent">
                         <div class="news-title">
                             <h3><a href="<?= $link_lk;?>"><?= $title_lk?></a></h3>
                         </div>

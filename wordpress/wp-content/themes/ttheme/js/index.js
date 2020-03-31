@@ -65,13 +65,13 @@ $(function () {
     };
 
     function fixedHeader() {
-        if($(window).width() > 472){
+        // if($(window).width() > 472){
             if (window.pageYOffset > sticky) {
                 header.classList.add("sticky");
             } else {
                 header.classList.remove("sticky");
             }
-        }
+        // }
     }
     // section-tmp-payment
 

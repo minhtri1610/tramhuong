@@ -27,18 +27,21 @@
                         $news_title = get_the_title();
                         $news_link_lk = get_the_permalink();
                         $news_description = get_the_excerpt();
-                        // $news_date_post = date('d-m-Y', strtotime(get_the_date()));
+                        $news_date_post = date('d-m-Y', strtotime(get_the_date()));
                 ?>
                     <div class="lsn-item row">
-                        <div class="lsni-img col-md-3 col-4">
+                        <div class="lsni-img col-md-3 col-3">
                             <?php if ( has_post_thumbnail() ) {?>
                                 <a class="" href="<?= $news_link_lk;?>"><?php the_post_thumbnail('thumbnail'); ?></a>
                             <?php } else{?>
                                 <a class="" href="<?= $news_link_lk;?>"><img src="<?php echo URL_IMG."/news.jpg"?>"/></a>
                             <?php } ?>
                         </div>
-                        <div class="lsni-content col-md-9 col-8">
+                        <div class="lsni-content col-md-9 col-9">
                             <div class="lsni-title"><a href=""><?= $news_title; ?></a></div>
+                            <div class="post-date">
+                                <p>Ngày đăng: <?= $news_date_post;?></p>
+                            </div>
                             <div class="lsni-text">
                                 <?= $news_description;?>
                             </div>
@@ -51,7 +54,7 @@
                         wp_reset_postdata();
                     endif;
                 ?>
-                    <div class="row text-just-center">
+                    <div class="row text-just-center view-more">
                         <a href="<?= URL_ROOT.'/tin-tuc'?>">>>> Xem thêm <<<</a>
                     </div>
                 </div>

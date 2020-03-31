@@ -21,6 +21,8 @@ get_header();
 
         <?php get_template_part('template-part/top-news'); ?>
 
+        <?php get_template_part('template-part/map'); ?>
+
         <!-- thống kê truy cập -->
         <section id="section-statistical">
             <div class="row">

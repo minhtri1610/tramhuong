@@ -1,5 +1,5 @@
 <section id ="section-radio" class="grey-div">
-    <div class="container">
+    <div class="container wow slideInLeft" data-wow-duration="1s" data-wow-delay="1s">
         <h2 class="sub-title">
             <b></b>
             <span>Giới thiệu</span>

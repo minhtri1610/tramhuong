@@ -1,5 +1,5 @@
-<section id ="section-radio" class="">
-    <div class="container">
+<section id ="section-radio" class="index-pr">
+    <div class="container wow slideInRight" data-wow-duration="1s" data-wow-delay="1s">
         <h2 class="sub-title">
             <b></b>
             <span>Sản phẩm</span>
