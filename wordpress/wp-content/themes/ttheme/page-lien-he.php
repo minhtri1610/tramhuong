@@ -13,7 +13,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <p class="thank-text">
-                            Cám ơn quý khách đã ghé thăm website <a href="<?= URL_ROOT;?>"><?= NAME_DOIMAIN;?></a>. Quý vị có thể liên hệ theo thông tin bên dưới.
+                            Cám ơn quý khách đã ghé thăm website <a href="<?= URL_ROOT;?>"><?= NAME_DOIMAIN;?></a>. Quý khách có thể liên hệ theo thông tin bên dưới.
                         </p>
                     </div>
                 </div>

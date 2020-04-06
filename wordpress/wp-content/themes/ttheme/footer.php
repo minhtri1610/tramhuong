@@ -52,11 +52,6 @@
     <script>
         jQuery(document).ready(function($) {
             //index flick slide
-            $('.main-carousel').flickity({
-                // options
-                cellAlign: 'left',
-                contain: true
-            });
 
             $('.slick-banner').slick({
                 infinite: true,
@@ -88,8 +83,10 @@
             //     // autoplaySpeed: 3000,
             // });
             $('.slick-banner').show();
+            $('.slick-slider').show();
             // $('.slick-books').show();
             // $('.slick-images').show();
+            $('.carousel-cell').show();
 
             $('.sm-intro').slick({
                 dots: true,

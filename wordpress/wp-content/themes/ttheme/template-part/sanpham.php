@@ -5,7 +5,8 @@
             <span>Sản phẩm</span>
             <b></b>
         </h2>
-        <div class="main-carousel" data-flickity='{ "groupCells": true }'>
+        <div class="main-carousel" data-flickity='{ "groupCells": "true", "cellAlign": "center",
+                "contain": "true" }'>
 
             <?php 
                 $args_banner = array(

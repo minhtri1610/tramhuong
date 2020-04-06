@@ -75,9 +75,11 @@
 
         <div class="row section-payment">
             <div class="col-md-6 contact-number">
-                <div class="btn-payment">
-                    <i class="fas fa-mobile-alt"></i> <?= MY_PHONE;?>
-                </div>
+                <a href="tel:+<?= MY_PHONE;?>">
+                    <div class="btn-payment">
+                        <i class="fas fa-mobile-alt"></i> <?= MY_PHONE;?>
+                    </div>
+                </a>
             </div>
             <div class="col-md-6 payment">
                 <a href="<?= URL_ROOT.'/gio-hang'?>">
