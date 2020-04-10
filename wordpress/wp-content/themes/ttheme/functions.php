@@ -62,6 +62,11 @@
 		
     require dirname( __FILE__ ).'/init/product.php';
 	require dirname( __FILE__ ).'/init/init.php';
+
+	function yst_wpseo_change_og_locale( $locale ) {
+		return 'vi_vn';
+	}
+	add_filter( 'wpseo_locale', 'yst_wpseo_change_og_locale' );
 	
 	function devvn_wp_corenavi($custom_query = null, $paged = null) {
 		global $wp_query;
