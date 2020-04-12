@@ -38,7 +38,7 @@
                             <?php } ?>
                         </div>
                         <div class="lsni-content col-md-9 col-9">
-                            <div class="lsni-title"><a href=""><?= $news_title; ?></a></div>
+                            <div class="lsni-title"><a href="<?= $news_link_lk;?>"><?= $news_title; ?></a></div>
                             <div class="post-date">
                                 <p>Ngày đăng: <?= $news_date_post;?></p>
                             </div>

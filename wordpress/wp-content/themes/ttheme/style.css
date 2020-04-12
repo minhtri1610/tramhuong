@@ -1109,7 +1109,7 @@ main{
     margin-top: 5px;
 }
 .sp-img img{
-    min-height: 345px;
+    min-height: 285px;
     width     : 250px;
     padding   : 5px 0;
     max-width : 100%;
@@ -1200,6 +1200,7 @@ main{
 .dsp-detail-sp table th, .dsp-detail-sp table td {
     padding      : 5px 0;
     border-bottom: 1px solid #dcdcdc;
+    word-break: break-word;
 }
 .dsp-ttsp{
     text-align   : center;
@@ -1858,8 +1859,27 @@ input[type=number] {
         justify-content: center;
         max-width: 100%;
     }
+    ._51mx td:nth-child(3) div{
+        display: none ;
+    }
 }
 @media only screen and (max-width: 414px) {
+    .dsp-detail-sp table tr,.dsp-detail-sp table th,.dsp-detail-sp table td{
+        display: block;
+    }
+    .dsp-detail-sp table th {
+        width: unset;
+    }
+    .sp-action{
+        overflow: hidden;
+    }
+    .sp-item {
+        max-width: 100%;
+        flex: 100%;
+    }
+    .fb-like{
+        overflow: hidden;
+    }
     .btn-go-contact{
         font-size: 16px;
     }
@@ -2071,9 +2091,7 @@ input[type=number] {
     .dsp-list-img{
         margin: 15px auto;
     }
-    .dsp-info-sp{
-        margin: 15px;
-    }
+    
     .no-border{
         text-align: center;
     }
@@ -2216,6 +2234,7 @@ input[type=number] {
     .right-cart input, .right-cart select {
         font-size: 14px;
     }
+    
 }
 @media only screen and (max-width: 375px){
     .f-info p {

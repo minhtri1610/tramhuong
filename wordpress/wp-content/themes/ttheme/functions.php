@@ -17,8 +17,8 @@
 	define('NAME_DOIMAIN', 'nhangtramphuocloc.com');
 	define('ZALO', 'link zalo');
 	define('FB_LINK', 'fb.com/nhangtramphuocloc');
-	define('VERSION_CSS', '31032020');
-	define('VERSION_JS', '31032020');
+	define('VERSION_CSS', '12042020');
+	define('VERSION_JS', '12042020');
 
 	if ( ! function_exists( 'ttheme_setup' ) ) :
 		function ttheme_setup() {

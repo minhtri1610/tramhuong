@@ -36,14 +36,14 @@
                     </div>
                 </div>
                 <div class="col-md-6 dsp-info-sp">
-                    <div class="row dsp-name-sp">
+                    <div class=" dsp-name-sp">
                         <h2>
                             <a href="<?= $link;?>">
                                 <?= $name;?>
                             </a>
                         </h2>
                     </div>
-                    <div class="row dsp-detail-sp">
+                    <div class=" dsp-detail-sp">
                         <table>
                             <tr>
                                 <th>Kích thước:</th>
@@ -113,7 +113,7 @@
                         $img01 = get_field('img01');
                         $id = get_the_ID();
             ?>
-                <div class="col-md-3 sp-item">
+                <div class="col-md-3 col-sm-12 sp-item">
                     <div class="sp-img">
                         <a href="<?= $link;?>">
                             <img src="<?= $img01;?>" alt="<?= $name;?>">

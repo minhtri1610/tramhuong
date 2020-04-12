@@ -22,7 +22,6 @@ $(function () {
                 //Làm gì đó trước khi gửi dữ liệu vào xử lý
             },
             success: function(response) {
-                console.log(response);
                 //Làm gì đó khi dữ liệu đã được xử lý
                 if(response.success) {
                     $('.alert-cart').show();
@@ -88,7 +87,6 @@ $(function () {
         let id_product_del = $(this).attr('data-id');
         let number_product_del = 1;
         let num_current = $('#' + id_product_del + ' .number-item').val();
-        console.log(num_current);
         if( num_current != 1 && num_current > 1 ){
             num_current--;
             $('#' + id_product_del + ' .number-item').val(num_current);
@@ -102,7 +100,6 @@ $(function () {
         let id_product_del = $(this).attr('data-id');
         let number_product_del = 1;
         let num_current = $('#' + id_product_del + ' .number-item').val();
-        console.log(num_current);
         if( num_current < 99999 ){
             num_current++;
             $('#' + id_product_del + ' .number-item').val(num_current);
@@ -115,7 +112,6 @@ $(function () {
     $( '.number-item' ).focusout(function() {
         let id_product_del = $(this).attr('data-id');
         let number_product_del = $(this).val();
-        console.log(number_product_del);
         // ajax delete item
         if(number_product_del > 0){
             update_product(id_product_del, number_product_del, 'edit');
@@ -144,7 +140,6 @@ $(function () {
                 //Làm gì đó khi dữ liệu đã được xử lý
                 if(response.success) {
                     if(response.data.data){
-                        console.log(response.data.data);
                         let db = response.data.data;
                         let total = db.count;
                         let num_current = db.number_item;
@@ -178,7 +173,6 @@ $(function () {
 
     $('select[name="provice"]').change(function () {
         let name_provice = $(this).val();
-        console.log(name_provice);
         $.ajax({
             type : "post", //Phương thức truyền post hoặc get
             dataType : "json", //Dạng dữ liệu trả về xml, json, script, or html
@@ -242,7 +236,6 @@ $(function () {
         if(data){
             html += "<ul>";
             data.forEach(function (params) {
-                console.log(params);
                     html += "<li>";
                         html += params;
                     html += "</li>";
