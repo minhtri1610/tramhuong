@@ -1,12 +1,12 @@
-<section id ="section-radio" class="grey-div wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+<section id ="section-radio" class="grey-div">
     <div class="container">
-        <h2 class="sub-title long-title wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
+        <h2 class="sub-title long-title wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay="1s">
             <b></b>
             <span>tại sao lựa chọn nhang trầm Phước Lộc</span>
             <b></b>
         </h2>
         <div class="howto-list row">
-            <div class="col-md-4 ht-item wow fadeIn" data-wow-duration="1.5s" data-wow-delay="1s">
+            <div class="col-md-4 ht-item wow fadeIn" data-wow-duration="1.5s" data-wow-delay="1.25s">
                 <div class="hti-img">
                     <img class="w100-img" src="<?= URL_IMG.'/howto/howto01.png'?>" alt="">
                 </div>
@@ -19,7 +19,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 ht-item wow fadeIn" data-wow-duration="1.5s" data-wow-delay="1s">
+            <div class="col-md-4 ht-item wow fadeIn" data-wow-duration="1.5s" data-wow-delay="1.25s">
                 <div class="hti-img">
                     <img class="w100-img" src="<?= URL_IMG.'/howto/howto02.png'?>" alt="">
                 </div>
@@ -32,7 +32,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 ht-item wow fadeIn" data-wow-duration="1.5s" data-wow-delay="1s">
+            <div class="col-md-4 ht-item wow fadeIn" data-wow-duration="1.5s" data-wow-delay="1.25s">
                 <div class="hti-img">
                     <img class="w100-img" src="<?= URL_IMG.'/howto/howto03.png'?>" alt="">
                 </div>

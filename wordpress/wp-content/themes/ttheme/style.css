@@ -970,13 +970,13 @@ main{
     box-shadow        : 0 0 20px rgba(0,0,0,.1);
     border: 1px solid #007bff;
 }
-.carousel-cell:hover .btn-add-cart{
+/* .carousel-cell:hover .btn-add-cart{
     border-top: 5px solid #5b95e1;
     border-bottom: 5px solid #1a73e8;
     background: #1a73e8;
     border-right: unset;
     border-left: unset;
-}
+} */
 .text-red{
     color: red;
 }
@@ -1059,7 +1059,6 @@ main{
 }
 .title-parent p a{
     color     : #09111ad6;
-    font-style: italic;
 }
 .cart{
     justify-content: flex-end;
@@ -1606,6 +1605,9 @@ input[type=number] {
     color         : #3a4148;
     font-weight   : bold;
 }
+.contact-title:hover{
+    color: #007bff;
+}
 .contain-map .contact-title{
     max-width: 50%;
 }
@@ -1621,22 +1623,19 @@ input[type=number] {
     font-weight  : bold;
     font-size    : 16px;
     margin-bottom: 5px;
-    padding      : 0 5px;
 }
 .r-contact-info form input{
     font-size    : 16px;
     padding      : 5px;
-    border-radius: 6px;
     border       : 1px solid #c8c8c8;
     width        : 100%;
     margin-bottom: 5px;
-    padding-left : 15px;
+    padding-left : 10px;
 }
 .r-contact-info form textarea{
     width        : 100%;
-    border-radius: 6px;
     border       : 1px solid #c8c8c8;
-    padding-left : 15px;
+    padding-left : 10px;
 }
 .btn-sendmail{
     padding        : 5px 35px;
@@ -1676,7 +1675,7 @@ input[type=number] {
     font-size: 22px;
 }
 .post-date{
-    font-size : 14px;
+    font-size : 12px;
     color     : #868686;
     font-style: italic;
 }
@@ -1753,6 +1752,7 @@ input[type=number] {
 }
 .news-lq li{
     list-style: disc;
+    padding: 10px 0;
 }
 /* end page child tin tuc */
 /* end checkout page */
@@ -1801,6 +1801,63 @@ input[type=number] {
 }
 .text-uppercasse{
     text-transform: uppercase;
+}
+
+.view-more{
+    margin-top: 25px;
+}
+.about-img img{
+    max-width: 100%;
+}
+.news-body{
+    padding: 15px 0;
+}
+@media only screen and (max-width: 768px) {
+    .title-parent h1{
+        font-size: 23px;
+    }
+    .logo img {
+        width: 115px;
+    }
+    .cart a i {
+        font-size: 18px;
+    }
+    nav ul a {
+        font-size: 12px;
+    }
+    .sub-title{
+        font-size: 24px;
+    }
+    .contact-title {
+        font-size: 14px;
+    }
+    .news-ipad{
+        max-width: 100%;
+        flex: none;
+    }
+    .carousel-cell {
+        width: 40%;
+    }
+    .sp-item{
+        max-width: 30%;
+        flex: 30%;
+    }
+    .sp-img img {
+        min-height: 250px;
+    }
+    .left-cart{
+        flex: 100%;
+        max-width: 100%;
+    }
+    .right-cart{
+        flex: 80%;
+        max-width: 100%;
+    }
+    .dsp-list-img, .dsp-info-sp{
+        flex: 0 0 100%;
+        justify-content: center;
+        max-width: 100%;
+    }
 }
 @media only screen and (max-width: 414px) {
     .btn-go-contact{

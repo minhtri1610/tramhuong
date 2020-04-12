@@ -1,7 +1,7 @@
 <section id = "section-news" class="white-div">
     <div class="container">
         <div class="row ">
-            <div class="col-md-8">
+            <div class="col-md-8 col-sm-12 news-ipad">
                 <!-- <div class="parent_title" >
                     <a class="" href="<?= URL_ROOT?>"><p class = " wow fadeIn" data-wow-duration=".3" data-wow-delay=".5s"> <img width="25px" src="<?= URL_IMG."/icon-social/icon_banhxephap2.png";?>" alt=""> Tin tức</p></a>
                 </div> -->
@@ -59,7 +59,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-12 news-ipad">
                 <div class="row">
                     <div class="col-md-12">
                         <h1 class="contact-title" style="max-width:100%"><i class="fab fa-facebook"></i>&nbsp;FANPAGE FACEBOOK</h1>

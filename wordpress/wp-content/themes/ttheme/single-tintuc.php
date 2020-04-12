@@ -28,7 +28,7 @@
                         Ngày đăng: <?= $news_date_post_sign;?>
                     </div>
                     <div class="list-btn-socical">
-                        <iframe src="https://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fnhangtramphuocloc.com&width=450&layout=standard&action=like&size=small&share=true&height=35&appId=828266150704740" width="320" height="35" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                        <div class="fb-like" data-href="<?= $link;?>" data-width="" data-layout="standard" data-action="like" data-size="small" data-share="true"></div>
                     </div>
                     <div class="news-body">
                         <?php echo  nl2br($content_text);?>

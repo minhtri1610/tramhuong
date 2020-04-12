@@ -63,7 +63,7 @@
                             </tr>
                             <tr>
                                 <th>Đánh giá:</th>
-                                <td><iframe src="https://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fnhangtramphuocloc.com&width=320&layout=standard&action=like&size=small&share=true&height=35&appId=828266150704740" width="320" height="35" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe></td>
+                                <td><div class="fb-like" data-href="<?= $link;?>" data-width="" data-layout="standard" data-action="like" data-size="small" data-share="true"></div></td>
                             </tr>
                             <tr>
                                 <td colspan="2" class=" no-border">

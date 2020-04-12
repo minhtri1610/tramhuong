@@ -49,7 +49,8 @@
                             <p>Ngày đăng: <?= $date_post;?></p>
                         </div>
                         <div class="list-action-socical">
-                            <iframe src="https://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fnhangtramphuocloc.com&width=320&layout=standard&action=like&size=small&share=true&height=35&appId=828266150704740" width="320" height="35" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                        <div class="fb-like" data-href="<?= $link_lk;?>" data-width="" data-layout="standard" data-action="like" data-size="small" data-share="true"></div>
+                            <!-- <iframe src="https://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fnhangtramphuocloc.com&width=320&layout=standard&action=like&size=small&share=true&height=35&appId=828266150704740" width="320" height="35" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe> -->
                             <!-- <ul>
                                 <li><button class="button">button01</button></li>
                                 <li><button class="button">button01</button></li>

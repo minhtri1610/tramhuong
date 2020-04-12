@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link type="text/css" rel="stylesheet" href="<?php echo URL_CSS;?>/bootstrap.min.css"  media="screen,projection"/>
-    <link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet"> -->
     <link type="text/css" rel="stylesheet" href="<?= URL_JS.'/slick/slick-theme.css';?>"/>
     <link type="text/css" rel="stylesheet" href="<?= URL_JS.'/slick/slick.css';?>"/>
     <link href="<?= URL_CSS.'/all.min.css';?>" rel="stylesheet">

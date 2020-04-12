@@ -38,7 +38,8 @@
             </div>
         </div>
     </footer>
-    
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v6.0&appId=721252958411769&autoLogAppEvents=1"></script>
     <script type="text/javascript" src="<?= URL_JS.'/jquery-11.0.min.js'?>"></script>
     <script type="text/javascript" src="<?= URL_JS.'/bootstrap.min.js'?>"></script>
     <script type="text/javascript" src="<?= URL_JS.'/slick/slick.min.js'?>"></script>
