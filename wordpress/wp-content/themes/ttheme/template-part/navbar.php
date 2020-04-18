@@ -11,7 +11,7 @@
   <div class="container">
     <div class="logo col-md-3">
       <a href="<?= URL_ROOT;?>">
-        <img class="w100-img" src="<?= URL_IMG.'/logo.png'?>" alt="">
+        <img class="w100-img" src="<?= URL_IMG.'/logo.png'?>" alt="Nhang trầm phước lộc">
       </a>
     </div>
     <div class="col-md-6 title-parent">

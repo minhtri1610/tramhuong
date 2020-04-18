@@ -80,7 +80,7 @@
                         THÔNG TIN SẢN PHẨM
                     </h2>
                     <div class="sp-content">
-                        <?= nl2br($intro_detail);?>
+                        <?= $intro_detail;?>
                     </div>
                 </div>
             </div>

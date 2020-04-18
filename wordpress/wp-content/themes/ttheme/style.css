@@ -941,7 +941,7 @@ main{
     height        : 430px;
     margin        : 10px;
     padding-bottom: 20px;
-    border: 1px solid #ffc107;
+    border: 1px solid #d8d8d8;
     text-align: center;
     display   : none;
 }
@@ -1181,26 +1181,29 @@ main{
 }
 .carousel-cell-pro img{
     max-width: 100%;
-    width    : 250px;
+    /* width    : 250px; */
+    height: 100%;
 }
 .sp-content p{
     padding-bottom: 0;
 }
 .sp-content{
-    margin-bottom: 70px;
+    margin-bottom: 15px;
 }
 .dsp-sp{
     margin-bottom: 30px;
 }
 .dsp-detail-sp table th{
-    width         : 30%;
-    text-align    : left;
+    text-align: left;
+    font-size: 13px;
     vertical-align: top;
+    width: 150px;
 }
 .dsp-detail-sp table th, .dsp-detail-sp table td {
     padding      : 5px 0;
     border-bottom: 1px solid #dcdcdc;
     word-break: break-word;
+    font-size: 13px;
 }
 .dsp-ttsp{
     text-align   : center;
@@ -1212,8 +1215,9 @@ main{
 .dsp-text-content{
     margin-top: 50px;
 }
-.dsp-name-sp h2 a{
-    color: #7b0000;
+.dsp-name-sp h2 a {
+    color: #0078ff;
+    font-size: 24px;
 }
 .sp-list{
     margin-bottom: 15px;
@@ -1813,6 +1817,12 @@ input[type=number] {
 .news-body{
     padding: 15px 0;
 }
+.sp-content ul{
+    margin-bottom: 5px;
+}
+.sp-content p{
+    margin-bottom: 5px;
+}
 @media only screen and (max-width: 768px) {
     .title-parent h1{
         font-size: 23px;
@@ -1864,6 +1874,9 @@ input[type=number] {
     }
 }
 @media only screen and (max-width: 414px) {
+    .page_cart .btn-go-contact {
+        width: 100%;
+    }
     .dsp-detail-sp table tr,.dsp-detail-sp table th,.dsp-detail-sp table td{
         display: block;
     }
@@ -1876,9 +1889,6 @@ input[type=number] {
     .sp-item {
         max-width: 100%;
         flex: 100%;
-    }
-    .fb-like{
-        overflow: hidden;
     }
     .btn-go-contact{
         font-size: 16px;
@@ -2234,7 +2244,13 @@ input[type=number] {
     .right-cart input, .right-cart select {
         font-size: 14px;
     }
-    
+    .fb-like span{
+        width: 320px!important;
+        overflow: hidden!important;
+    }
+    .dsp-info-sp{
+        margin-top: 15px;
+    }
 }
 @media only screen and (max-width: 375px){
     .f-info p {

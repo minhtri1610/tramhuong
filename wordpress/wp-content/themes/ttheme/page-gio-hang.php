@@ -10,7 +10,7 @@
             $count = count($_SESSION['data_cart']);
         }
     ?>
-        <div class="section-page">
+        <div class="section-page page_cart">
             <div class="row">
                 <div class="col-md-12">
                     <h1 class="contact-title"><i class="fas fa-shopping-bag"></i>&nbsp;Giỏ hàng (<span class="number-sp"><?= $count;?></span> sản phẩm)</h1>
@@ -85,6 +85,9 @@
                 <?php else:?>
                     <div class="col-md-12">
                         <p class="text-red pd-15">Không có sản phẩm nào trong giỏ hàng!</p>
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <a href="<?= URL_ROOT.'/san-pham';?>"><button class='btn-go-contact'> Mua hàng <span> &nbsp; <i class="fas fa-arrow-circle-right"></i> </span></button></a>
                     </div>
                 <?php endif;?>
             </div>
